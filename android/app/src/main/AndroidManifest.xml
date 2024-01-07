@@ -1,6 +1,7 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <application
-        android:label="storytelling"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.story_tellingapp">
+   <application
+        android:label="story_tellingapp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

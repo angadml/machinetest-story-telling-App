@@ -1,6 +1,6 @@
 {
-    "name": "storytelling",
-    "short_name": "storytelling",
+    "name": "story_tellingapp",
+    "short_name": "story_tellingapp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

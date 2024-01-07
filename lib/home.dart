@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:storytelling/signin.dart';
-
-import 'author.dart';
-import 'sign_up.dart';
-
+import 'package:story_tellingapp/author.dart';
+import 'package:story_tellingapp/createacc.dart';
+import 'package:story_tellingapp/signin.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -16,11 +14,11 @@ class home extends StatefulWidget {
 class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
-
+    var hightM = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(children: [
         Container(
-
+          height: hightM,
           width: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -52,8 +50,6 @@ class _homeState extends State<home> {
                   fontStyle: FontStyle.normal,
                   color: Colors.white),
             ),
-            SizedBox(height: 100,),
-
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
@@ -64,12 +60,8 @@ class _homeState extends State<home> {
                 ),
                 child: Text(
                   'sign in',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                 )),
-            SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
@@ -80,29 +72,29 @@ class _homeState extends State<home> {
                 ),
                 child: Text(
                   'sign up',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                 )),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 3, right: 4, top: 10, bottom: 0),
+                  child: TextButton(
                     child: Text('Author login'),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => auth()));
                     },
                   ),
-                  TextButton(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 180),
+                  child: TextButton(
                     child: Text('admin login'),
                     onPressed: () {},
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
