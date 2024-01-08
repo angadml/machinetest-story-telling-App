@@ -2,9 +2,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:story_tellingapp/stories.dart';
-
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -19,7 +17,6 @@ class _SignInState extends State<SignIn> {
   Dio dio = Dio();
 
   signInApiCall() async {
-
     try {
       var response = await dio.post('http://127.0.0.1:8080/auth/signIn', data: {
         "phoneNumber": phoneControler.text,
@@ -138,7 +135,6 @@ class _SignInState extends State<SignIn> {
                   child: ElevatedButton(
                     onPressed: () {
                       signInApiCall();
-
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor:
@@ -146,7 +142,9 @@ class _SignInState extends State<SignIn> {
                     ),
                     child: Text("LOGIN",
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w600)),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white)),
                   ),
                 ),
               ],

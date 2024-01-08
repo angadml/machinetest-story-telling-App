@@ -174,7 +174,8 @@ class _SignupState extends State<Signup> {
                               label: const Text("Sign Up",
                                   style: TextStyle(
                                       fontSize: 20,
-                                      fontWeight: FontWeight.w600)),
+                                      fontWeight: FontWeight.w600,
+                                  color: Colors.white)),
                             )),
                       ],
                     ),

@@ -50,6 +50,8 @@ class _homeState extends State<home> {
                   fontStyle: FontStyle.normal,
                   color: Colors.white),
             ),
+            SizedBox(height: 100,),
+
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
@@ -60,8 +62,12 @@ class _homeState extends State<home> {
                 ),
                 child: Text(
                   'sign in',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
                 )),
+            SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
@@ -72,7 +78,10 @@ class _homeState extends State<home> {
                 ),
                 child: Text(
                   'sign up',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
                 )),
             Row(
               children: [
@@ -88,7 +97,7 @@ class _homeState extends State<home> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 180),
+                  padding: const EdgeInsets.only(left: 280),
                   child: TextButton(
                     child: Text('admin login'),
                     onPressed: () {},

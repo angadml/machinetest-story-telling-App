@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:story_tellingapp/author.dart';
 import 'package:story_tellingapp/signin.dart';
 import 'package:story_tellingapp/stories.dart';

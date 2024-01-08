@@ -1,7 +1,5 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:story_tellingapp/home.dart';
 import 'package:story_tellingapp/viewstory.dart';
 
