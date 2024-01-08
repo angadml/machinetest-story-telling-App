@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
 
 class auth extends StatefulWidget {
   const auth({super.key});
@@ -95,12 +96,16 @@ class _authState extends State<auth> {
                     ),
                   ),
                 ),
+                SizedBox(height: 20,),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple, // Set your preferred color
                   ),
-                  child: Text('Pick Audio'),
+                  child: Text('Pick Audio',style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600,
+                      color: Colors.white),),
                 ),
                 SizedBox(height: 16),
                 // _selectedAudio != null?
@@ -113,9 +118,11 @@ class _authState extends State<auth> {
                     backgroundColor: Colors.purple, // Set your preferred color
                   ),
                   child: Text(
-                    'Upload Audio',
+                    'Upload Audio',style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600,
+                      color: Colors.white),
                   ),
                 ),
+                SizedBox(height: 10,),
 
                 ElevatedButton(
                   onPressed: () {
@@ -127,8 +134,10 @@ class _authState extends State<auth> {
                   ),
                   child: Text("SUBMIT",
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.w600,
+                          color: Colors.white)),
                 ),
+
               ],
             ),
           ),
