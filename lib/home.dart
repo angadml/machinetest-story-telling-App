@@ -14,11 +14,11 @@ class home extends StatefulWidget {
 class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
-    var hightM = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Stack(children: [
         Container(
-          height: hightM,
+
           width: double.infinity,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -83,27 +83,24 @@ class _homeState extends State<home> {
                       fontWeight: FontWeight.w600,
                       color: Colors.white),
                 )),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: 3, right: 4, top: 10, bottom: 0),
-                  child: TextButton(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
                     child: Text('Author login'),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => auth()));
                     },
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 280),
-                  child: TextButton(
+                  TextButton(
                     child: Text('admin login'),
                     onPressed: () {},
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),

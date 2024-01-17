@@ -26,69 +26,62 @@ class _storyState extends State<story> {
 
   @override
   Widget build(BuildContext context) {
-    var screenHeight = MediaQuery.of(context).size.height;
-    var screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: screenHeight,
-            width: screenWidth,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.purple,
-                    Colors.purple.shade300,
-                    Colors.purple.shade200
-                  ]),
+      body: Container(
+
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.purple,
+                Colors.purple.shade300,
+                Colors.purple.shade200
+              ]),
+        ),
+        child: Column(
+          children: [
+            BackButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            child: Column(
-              children: [
-                BackButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                SizedBox(height: 10),
-                Text('Stories',
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontStyle: FontStyle.normal,
-                        color: Colors.white70)),
-                ListView.builder(
-                    itemCount: storyTitles.length,
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      view(storyTitle: storyTitles[index],
-                                      storyContent: storyContent[index]),
-                                ));
-                          },
-                          child: Container(
-                            height: 100,
-                            width: screenWidth / 1.2,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.lightBlueAccent),
-                            child: Text(storyTitles[index]),
-                          ),
-                        ),
-                      );
-                    }),
-              ],
+            SizedBox(height: 10),
+            Text('Stories',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontStyle: FontStyle.normal,
+                    color: Colors.white70)),
+            Expanded(
+              child: ListView.builder(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                  itemCount: storyTitles.length,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  view(storyTitle: storyTitles[index],
+                                  storyContent: storyContent[index]),
+                            ));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.symmetric(vertical: 8),
+                        height: 100,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.lightBlueAccent),
+                        child: Text(storyTitles[index]),
+                      ),
+                    );
+                  }),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

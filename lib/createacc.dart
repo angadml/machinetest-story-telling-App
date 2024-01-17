@@ -19,7 +19,7 @@ class _SignupState extends State<Signup> {
 
   apiCall() async {
     try {
-      var response = await dio.post('http://127.0.0.1:8080/auth/signUp', data: {
+      var response = await dio.post('http://10.0.2.2:8080/auth/signUp', data: {
         "firstName": firstName.text,
         "lastName": lastName.text,
         "phoneNumber": phoneNumber.text,
@@ -154,29 +154,27 @@ class _SignupState extends State<Signup> {
                           ),
                         ),
                         const SizedBox(height: 30),
-                        Container(
-                            height: 50,
-                            width: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.lightGreen,
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: FloatingActionButton.extended(
-                              backgroundColor: Colors.purple,
-                              onPressed: () {
-                                apiCall();
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const SignIn(),
-                                    ));
-                              },
-                              label: const Text("Sign Up",
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600,
-                                  color: Colors.white)),
-                            )),
+                        ElevatedButton(
+
+                          onPressed: () {
+
+                            apiCall();
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignIn(),
+                                ));
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                            Colors.purple,
+                          ),
+                          child:Text("Sign Up",
+                              style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w600,
+                              color: Colors.white)),
+                        ),
                       ],
                     ),
                   ),

@@ -18,7 +18,7 @@ class _SignInState extends State<SignIn> {
 
   signInApiCall() async {
     try {
-      var response = await dio.post('http://127.0.0.1:8080/auth/signIn', data: {
+      var response = await dio.post('http://10.0.2.2:8080/auth/signIn', data: {
         "phoneNumber": phoneControler.text,
         "password": passwordControler.text
       });
@@ -43,7 +43,7 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(resizeToAvoidBottomInset: true,
         body: Column(
       children: [
         Expanded(
@@ -123,29 +123,19 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 SizedBox(height: 30),
-                Container(
-                  width: 330,
-                  height: 60,
-                  decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.topRight,
-                          colors: [Colors.black26, Colors.black45]),
-                      borderRadius: BorderRadius.circular(30)),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      signInApiCall();
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          Colors.purple, // Set your preferred color
-                    ),
-                    child: Text("LOGIN",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white)),
+                ElevatedButton(
+                  onPressed: () {
+                    signInApiCall();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                        Colors.purple,
                   ),
+                  child: Text("LOGIN",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white)),
                 ),
               ],
             ),
