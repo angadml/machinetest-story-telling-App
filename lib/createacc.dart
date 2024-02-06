@@ -13,7 +13,7 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
   TextEditingController firstName = TextEditingController();
   TextEditingController lastName = TextEditingController();
-  TextEditingController phoneNumber = TextEditingController();
+  TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   Dio dio = Dio();
 
@@ -22,7 +22,7 @@ class _SignupState extends State<Signup> {
       var response = await dio.post('http://10.0.2.2:8080/auth/signUp', data: {
         "firstName": firstName.text,
         "lastName": lastName.text,
-        "phoneNumber": phoneNumber.text,
+        "phoneNumber": email.text,
         "password": password.text
       });
       log(response.data.toString());
@@ -123,12 +123,12 @@ class _SignupState extends State<Signup> {
                             padding: const EdgeInsets.only(
                                 left: 20, right: 50, top: 3),
                             child: TextField(
-                              controller: phoneNumber,
+                              controller: email,
                               decoration: const InputDecoration(
                                   hintStyle: TextStyle(color: Colors.black),
-                                  hintText: "Phone Number",
+                                  hintText: "Email",
                                   icon:
-                                      Icon(Icons.phone, color: Colors.white38),
+                                      Icon(Icons.email_outlined, color: Colors.white38),
                                   enabledBorder: InputBorder.none),
                             ),
                           ),
