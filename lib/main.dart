@@ -1,14 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:story_tellingapp/author.dart';
-import 'package:story_tellingapp/signin.dart';
-import 'package:story_tellingapp/stories.dart';
-import 'package:story_tellingapp/viewstory.dart';
 
 
-import 'createacc.dart';
+
+import 'sign_up.dart';
+import 'firebase_options.dart';
 import 'home.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+       options: DefaultFirebaseOptions.currentPlatform,
+     );
   runApp( MyApp());
 }
 

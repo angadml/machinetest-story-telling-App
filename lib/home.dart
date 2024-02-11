@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:story_tellingapp/author.dart';
-import 'package:story_tellingapp/createacc.dart';
-import 'package:story_tellingapp/signin.dart';
+import 'package:storytelling/signin.dart';
+
+import 'author.dart';
+import 'sign_up.dart';
+
 
 class home extends StatefulWidget {
   const home({super.key});

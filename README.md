@@ -1,4 +1,4 @@
-# story_tellingapp
+# storytelling
 
 A new Flutter project.
 

@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:story_tellingapp/home.dart';
-import 'package:story_tellingapp/viewstory.dart';
+import 'package:storytelling/viewstory.dart';
+
 
 class story extends StatefulWidget {
   const story({super.key});
