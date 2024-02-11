@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "450189912614",
+    "project_id": "storytelling-f1510",
+    "storage_bucket": "storytelling-f1510.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450189912614:android:9299fa24a9110c501ad4e7",
+        "android_client_info": {
+          "package_name": "com.example.storytelling"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-4gp48SR06O9dpqHE4c4YsED5Y9b9T2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
